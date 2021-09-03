@@ -4,8 +4,8 @@
 @construction-dashes: 5,5;
 @proposed-dashes: 4,8;
 
-@dual-gauge-dashes: 6,9;
-@multi-gauge-dashes: 3,6;
+@dual-gauge-dashes: 8,8;
+@multi-gauge-dashes: 4,12;
 
 @color_gauge_0064: #004000;
 @color_gauge_0089: #006000;
