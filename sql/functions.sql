@@ -466,18 +466,18 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
--- Get the desired part from listed values (e.g. gauge)
-CREATE OR REPLACE FUNCTION railway_desired_part_from_list(desired_nr INTEGER, listed_values TEXT) RETURNS TEXT AS $$
+-- Get the desired value from listed values (e.g. gauge)
+CREATE OR REPLACE FUNCTION railway_desired_value_from_list(desired_nr INTEGER, listed_values TEXT) RETURNS TEXT AS $$
 DECLARE
-  parts TEXT[];
+  value_array TEXT[];
 BEGIN
   IF listed_values IS NULL OR listed_values = '' OR THEN desired_nr <= 0 THEN
     RETURN NULL;
   END IF;
-  parts := regexp_split_to_array(listed_values, ';');
-  IF desired_nr > array_length(parts, 1) THEN
+  value_array := regexp_split_to_array(listed_values, ';');
+  IF desired_nr > array_length(value_array, 1) THEN
     RETURN NULL;
   END IF;
-  RETURN parts[desired_nr];
+  RETURN value_array[desired_nr];
 END;
 $$ LANGUAGE plpgsql;
