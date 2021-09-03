@@ -243,7 +243,7 @@ Layer:
           ORDER BY
             layer,
             rank NULLS LAST
-        ) AS railway_line_fill
+        ) AS railway_dual_gauge_line
     properties:
       minzoom: 9
 # railway_multi_gauge_line renders with almost the same styling on top of the railway_dual_gauge_line and thereby adds a second dashed line.
@@ -295,7 +295,7 @@ Layer:
           ORDER BY
             layer,
             rank NULLS LAST
-        ) AS railway_line_fill
+        ) AS railway_multi_gauge_line
     properties:
       minzoom: 9
   - id: railway_text_med
