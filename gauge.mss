@@ -7,12 +7,12 @@
 @dual-gauge-dashes: 8,8;
 @multi-gauge-dashes: 4,12;
 
-@color_gauge_0064: #004000;
-@color_gauge_0089: #006000;
-@color_gauge_0127: #008000;
-@color_gauge_0184: #00A000;
-@color_gauge_0190: #00C000;
-@color_gauge_0260: #00E000;
+@color_gauge_0064: #006060;
+@color_gauge_0089: #008080;
+@color_gauge_0127: #00A0A0;
+@color_gauge_0184: #00C0C0;
+@color_gauge_0190: #00E0E0;
+@color_gauge_0260: #00FFFF;
 @color_gauge_0381: #80FFFF;
 @color_gauge_0500: #A0FFFF;
 @color_gauge_0597: #C0FFFF;
@@ -22,12 +22,14 @@
 @color_gauge_0750: #FFA0FF;
 @color_gauge_0760: #FF80FF;
 @color_gauge_0762: #FF60FF;
+@color_gauge_0785: #FF40FF;
 @color_gauge_0800: #FF00FF;
-@color_gauge_0900: #E000FF;
-@color_gauge_0914: #C000FF;
-@color_gauge_0950: #A000FF;
-@color_gauge_1000: #8000FF;
-@color_gauge_1009: #6000FF;
+@color_gauge_0891: #E000FF;
+@color_gauge_0900: #C000FF;
+@color_gauge_0914: #A000FF;
+@color_gauge_0950: #8000FF;
+@color_gauge_1000: #6000FF;
+@color_gauge_1009: #4000FF;
 @color_gauge_1050: #0000FF;
 @color_gauge_1067: #0000E0;
 @color_gauge_1100: #0000C0;
@@ -36,13 +38,14 @@
 @color_gauge_1422: #000060;
 @color_gauge_1432: #000040;
 @color_gauge_1435: #000000;
-@color_gauge_1436: #400000;
-@color_gauge_1440: #600000;
+@color_gauge_1440: #400000;
+@color_gauge_1445: #600000;
 @color_gauge_1450: #700000;
 @color_gauge_1458: #800000;
 @color_gauge_1495: #A00000;
 @color_gauge_1520: #C00000;
 @color_gauge_1522: #E00000;
+@color_gauge_1524: #FF0000;
 @color_gauge_1581: #FF6000;
 @color_gauge_1588: #FF8000;
 @color_gauge_1600: #FFA000;
@@ -52,9 +55,9 @@
 @color_gauge_1800: #E0FF00;
 @color_gauge_1880: #C0FF00;
 @color_gauge_2000: #A0FF00;
+@color_gauge_miniature: #80C0C0;
+@color_gauge_monorail: #C0C080;
 @color_gauge_broad: #FFC0C0;
-@color_gauge_miniature: #80FF80;
-@color_gauge_monorail: #C0C000;
 @color_gauge_narrow: #C0C0FF;
 @color_gauge_standard: #808080;
 @color_gauge_unknown: #C0C0C0;
@@ -217,8 +220,8 @@
     
     /* tracks with numeric gauge value */
 
-    [gauge=381],
-    [gauge>381][gauge<500] {
+    [gauge=380],
+    [gauge>380][gauge<500] {
       line-color: @color_gauge_0381;
     }
 
@@ -259,13 +262,23 @@
     }
 
     [gauge=762],
-    [gauge>762][gauge<800] {
+    [gauge>762][gauge<785] {
       line-color: @color_gauge_0762;
     }
 
+    [gauge=785],
+    [gauge>785][gauge<800] {
+      line-color: @color_gauge_0785;
+    }
+    
     [gauge=800],
-    [gauge>800][gauge<900] {
+    [gauge>800][gauge<891] {
       line-color: @color_gauge_0800;
+    }
+    
+    [gauge=891],
+    [gauge>891][gauge<900] {
+      line-color: @color_gauge_0891;
     }
 
     [gauge=900],
@@ -330,18 +343,18 @@
     }
 
     [gauge=1435],
-    [gauge>1435][gauge<1436] {
+    [gauge>1435][gauge<1440] {
       line-color: @color_gauge_1435;
     }
 
-    [gauge=1436],
-    [gauge>1436][gauge<1440] {
-      line-color: @color_gauge_1436;
+    [gauge=1440],
+    [gauge>1440][gauge<1445] {
+      line-color: @color_gauge_1440;
     }
 
-    [gauge=1440],
-    [gauge>1440][gauge<1450] {
-      line-color: @color_gauge_1440;
+    [gauge=1445],
+    [gauge>1445][gauge<1450] {
+      line-color: @color_gauge_1445;
     }
 
     [gauge=1450],
@@ -477,7 +490,7 @@
     ["gauge"="10.25\""],
     ["gauge"="0'10.25\""],
     [gauge=260],
-    [gauge>260][gauge<381] {
+    [gauge>260][gauge<380] {
       line-color: @color_gauge_0260;
     }
     
